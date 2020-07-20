@@ -14,6 +14,6 @@ zd
 ```
 
 ```
-mycd=xxx souce init.zsh
+MYCD=xxx souce init.zsh
 # the alias of the name xxx is created
 ```

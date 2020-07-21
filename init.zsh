@@ -1,4 +1,4 @@
-function mycd {
+function fzfcd {
   target=$1
   if [ -z ${target} ]; then
     target=$(find . -type d| sed '/\.git/d' |fzf)
@@ -6,4 +6,4 @@ function mycd {
   cd ${target}
 }
 
-alias ${MYCD:=zd}=mycd
+alias ${MYCD:=zd}=fzfcd

@@ -1,9 +1,10 @@
 function fzfcd {
   target=$1
   if [ -z ${target} ]; then
-    target=$(find . -type d| sed '/\.git/d' |fzf)
+    target="."
   fi
-  cd ${target}
+  moveto=$(find ${target} -type d| sed '/\.git/d' |fzf)
+  cd ${moveto}
 }
 
 alias ${MYCD:=zd}=fzfcd

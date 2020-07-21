@@ -8,4 +8,6 @@ function fzfcd {
   cd ${moveto}
 }
 
+compdef '_files -/' 'fzfcd'
+
 alias ${MYCD:=zd}=fzfcd

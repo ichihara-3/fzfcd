@@ -5,7 +5,9 @@ function fzfcd {
     target="."
   fi
   moveto=$(find ${target} -type d -maxdepth ${maxdepth:=4} | sed '/\.git/d' |fzf --select-1 --exit-0 ${fzfargs} )
-  cd ${moveto}
+  if [ ${moveto} ]; then
+    cd ${moveto}
+  fi
 }
 
 compdef '_files -/' 'fzfcd'

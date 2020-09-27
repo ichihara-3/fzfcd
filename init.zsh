@@ -4,7 +4,7 @@ function fzfcd {
   if [ -z ${target} ]; then
     target="."
   fi
-  moveto=$(find ${target} -type d -maxdepth ${maxdepth:=4} | sed '/\.git/d' |fzf --select-1 --exit-0 ${fzfargs} )
+  moveto=$(find ${target} -maxdepth ${maxdepth:=4} -type d  | sed '/\.git/d' |fzf --select-1 --exit-0 ${fzfargs} )
   if [ ${moveto} ]; then
     cd ${moveto}
   fi
